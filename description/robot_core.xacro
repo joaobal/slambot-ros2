@@ -3,6 +3,7 @@
 
     <!-- Include the colors file -->
     <xacro:include filename="$(find slambot)/description/colors.xacro"/>
+    <xacro:include filename="$(find slambot)/description/inertial_macros.xacro"/>
 
     <!-- Base link -->
     <link name="base_link"></link>
@@ -100,6 +101,17 @@
             </geometry>
             <material name="white"/>
         </visual>
+
+        <collision>
+            <origin xyz="0 0 0.100"/>
+            <geometry>
+                <cylinder radius="0.08" length="0.200"/>
+            </geometry>
+            <material name="white"/>
+        </collision>
+        <xacro:inertial_cylinder mass="1.0" radius="0.08" length="0.200">
+            <origin xyz="0 0 0.100" rpy="0 0 0"/>
+        </xacro:inertial_cylinder>
     </link>
 
     <!-- Left Wheel -->
