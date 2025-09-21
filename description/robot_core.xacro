@@ -45,7 +45,31 @@
             <material name="white"/>
         </visual>
 
-        <!--  -->
+        <!-- Spacers -->
+        <visual>
+            <origin xyz="0.060 0.033 0.085"/>
+            <geometry>
+                <cylinder radius="0.002" length="0.125"/>
+            </geometry>
+        </visual>
+        <visual>
+            <origin xyz="0.060 -0.033 0.085"/>
+            <geometry>
+                <cylinder radius="0.002" length="0.125"/>
+            </geometry>
+        </visual>
+        <visual>
+            <origin xyz="-0.060 0.033 0.085"/>
+            <geometry>
+                <cylinder radius="0.002" length="0.125"/>
+            </geometry>
+        </visual>
+        <visual>
+            <origin xyz="-0.060 -0.033 0.085"/>
+            <geometry>
+                <cylinder radius="0.002" length="0.125"/>
+            </geometry>
+        </visual>
 
         <!-- front free wheel -->
         <visual>
