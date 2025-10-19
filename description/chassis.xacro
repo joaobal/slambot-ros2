@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:macro name="chassis_body" params="parent:=base_link joint_name:=chassis_joint link_name:=chassis">
+        <joint name="${joint_name}" type="fixed">
+            <parent link="${parent}"/>
+            <child link="${link_name}"/>
+            <origin xyz="0 0 0"/>
+        </joint>
+        <link name="${link_name}">
+            <visual>
+                <origin xyz="0 0 0.020"/>
+                <geometry>
+                    <box size="0.14 0.10 0.01"/>
+                </geometry>
+                <material name="white"/>
+            </visual>
+            <visual>
+                <origin xyz="0 0 0.070"/>
+                <geometry>
+                    <cylinder radius="0.08" length="0.01"/>
+                </geometry>
+                <material name="white"/>
+            </visual>
+            <visual>
+                <origin xyz="0 0 0.120"/>
+                <geometry>
+                    <cylinder radius="0.08" length="0.01"/>
+                </geometry>
+                <material name="white"/>
+            </visual>
+            <visual>
+                <origin xyz="0 0 0.150"/>
+                <geometry>
+                    <box size="0.125 0.075 0.01"/>
+                </geometry>
+                <material name="white"/>
+            </visual>
+            <visual>
+                <origin xyz="0.060 0.033 0.085"/>
+                <geometry>
+                    <cylinder radius="0.002" length="0.125"/>
+                </geometry>
+            </visual>
+            <visual>
+                <origin xyz="0.060 -0.033 0.085"/>
+                <geometry>
+                    <cylinder radius="0.002" length="0.125"/>
+                </geometry>
+            </visual>
+            <visual>
+                <origin xyz="-0.060 0.033 0.085"/>
+                <geometry>
+                    <cylinder radius="0.002" length="0.125"/>
+                </geometry>
+            </visual>
+            <visual>
+                <origin xyz="-0.060 -0.033 0.085"/>
+                <geometry>
+                    <cylinder radius="0.002" length="0.125"/>
+                </geometry>
+            </visual>
+            <visual>
+                <origin xyz="0.045 0 0"/>
+                <geometry>
+                    <cylinder radius="0.015" length="0.030"/>
+                </geometry>
+            </visual>
+            <visual>
+                <origin xyz="0.045 0 -0.015"/>
+                <geometry>
+                    <sphere radius="0.015"/>
+                </geometry>
+                <material name="white"/>
+            </visual>
+            <visual>
+                <origin xyz="-0.045 0 0"/>
+                <geometry>
+                    <cylinder radius="0.015" length="0.030"/>
+                </geometry>
+            </visual>
+            <visual>
+                <origin xyz="-0.045 0 -0.015"/>
+                <geometry>
+                    <sphere radius="0.015"/>
+                </geometry>
+                <material name="white"/>
+            </visual>
+            <collision>
+                <origin xyz="0 0 0.100"/>
+                <geometry>
+                    <cylinder radius="0.08" length="0.200"/>
+                </geometry>
+                <material name="white"/>
+            </collision>
+            <xacro:inertial_cylinder mass="1.0" radius="0.08" length="0.200">
+                <origin xyz="0 0 0.100" rpy="0 0 0"/>
+            </xacro:inertial_cylinder>
+        </link>
+    </xacro:macro>
+</robot>
